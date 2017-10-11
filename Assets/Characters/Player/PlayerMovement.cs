@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     // Fixed update is called in sync with physics
     private void FixedUpdate()
     {
-        ProcessMouseMovement();
+        //ProcessMouseMovement();
     }
 
 	void WalkToDestination ()
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 		return destination - shortDistance;
 	}
 
-    private void ProcessMouseMovement()
+    /*private void ProcessMouseMovement()
     {
         if (Input.GetMouseButton(0))
         {
@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         WalkToDestination ();
-    }
+    }*/
 
 	void OnDrawGizmos ()
 	{
