@@ -2,11 +2,13 @@
 using UnityEngine.EventSystems;
 using System.Linq;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class CameraRaycaster : MonoBehaviour
 {
 	// INSPECTOR PROPERTIES RENDERED BY CUSTOM EDITOR SCRIPT
 	[SerializeField] int[] layerPriorities;
+    [SerializeField] string stringToPrint;
 
     float maxRaycastDepth = 100f; // Hard coded value
 	int topPriorityLayerLastFrame = -1; // So get ? from start with Default layer terrain
@@ -17,7 +19,6 @@ public class CameraRaycaster : MonoBehaviour
 
 	public delegate void OnClickPriorityLayer(RaycastHit raycastHit, int layerHit); // declare new delegate type
 	public event OnClickPriorityLayer notifyMouseClickObservers; // instantiate an observer set
-
 
     void Update()
 	{
@@ -48,6 +49,8 @@ public class CameraRaycaster : MonoBehaviour
 		{
 			notifyMouseClickObservers (priorityHit.Value, layerHit);
 		}
+        stringToPrint = GetComponent<GUIText>().text;
+        print(stringToPrint);
 	}
 
 	void NotifyObserversIfLayerChanged(int newLayer)
