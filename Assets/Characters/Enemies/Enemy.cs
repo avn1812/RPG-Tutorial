@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] float attackRadius = 4f;
 
+    GameObject walkTarget;
+
     float currentHealthPoints;
     AICharacterControl aiCharacterControl = null;
     GameObject player = null;

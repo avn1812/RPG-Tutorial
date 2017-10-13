@@ -20,15 +20,9 @@ public class CameraRaycasterEditor : Editor
                 BindArrayElements();
             }
             EditorGUI.indentLevel--;
-            PrintToString("");
         }
 
         serializedObject.ApplyModifiedProperties(); // De-serialize back to cameraRaycaster (and create undo point)
-    }
-
-    void PrintToString (string stringToPrint)
-    {
-        EditorGUILayout.TextField("String to Print", stringToPrint);
     }
 
     void BindArraySize()
