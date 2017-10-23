@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
         {
             case enemyLayerNumber:
                 GameObject enemy = raycastHit.collider.gameObject;
-                aiCharacterControl.SetTarget(enemy.transform);
+                aiCharacterControl.SetTarget (enemy.transform);
                 break;
             case walkableLayerNumber:
                 walkTarget.transform.position = raycastHit.point;
